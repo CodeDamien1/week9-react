@@ -28,7 +28,7 @@ label {
     display: flex;
     flex-direction: column;
     margin-bottom: 3px;
-    font-size: 12px;
+    font-size: 18px;
     border: 1px solid #ccc;
     padding: 3px;
     border-radius: 5px;
@@ -41,19 +41,19 @@ input {
     border-radius: 5px;
     border: 1px solid #ccc;
     margin-top: 2px;
-    font-size: 10px;
+    font-size: 18px;
 }
 
 
 
 button {
-    background-color: #4CAF50;
+    background-color: #ff0d00;
     color: white;
     padding: 2px 5px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 10px;
+    font-size: 18px;
     margin-top: 10;
 }
 
@@ -67,11 +67,24 @@ button:hover {
 
 h2 {
     text-align: center;
-    font-size: 20px;
+    font-size: 24px;
     margin-bottom: 2px;
 }
 
+#logout {
+  background-color: #ff0d00;
+  color: white;
+  padding: 2px 5px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 18px;
+  margin-top: 10;
+}
 
+#logout:hover {
+  background-color: #3e8e41;
+}
 
 br {
     margin-bottom: 2px;
