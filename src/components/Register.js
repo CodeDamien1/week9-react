@@ -2,14 +2,14 @@ import React from 'react'
 import { useState } from 'react'
 import { registerUser } from "../utils"
 
-const Register = () => {
+const Register = ({newUser}) => {
     const [username, setUsername] = useState()
     const [email, setEmail] = useState()
     const [password, setPassword] = useState()
 
     const submitHandler = async (e) => {
         e.preventDefault()
-        await registerUser(username, email, password)
+        await registerUser(username, email, password, newUser)
     }     
 
     return (

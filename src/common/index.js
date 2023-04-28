@@ -19,10 +19,15 @@ export const getCookie = (cookieName) => {
     console.log("regular expression")
     console.log(re)
     try{
-        let cookie = document.cookie.match(re)[0] //will raise a type error if the cookie isnt found
+        let cookie = document.cookie.match(re)[0] //will raise a type error if the cookie isn't found
         return cookie
     }catch {
         console.log("cookie not found")
         return false
     }
+}
+
+//deleting a cookie
+export const deleteCookie = (cookieName) => {
+    writeCookie (cookieName, "", -1);
 }

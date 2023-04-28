@@ -1,11 +1,10 @@
 import React from "react";
+import {useState, useEffect } from 'react'
+
 import Login from './components/Login'
 import Register from './components/Register'
 
-
-import {useState, useEffect } from 'react'
-
-import {getCookie} from "./common"
+import {deleteCookie, getCookie} from "./common"
 import { authCheck } from "./utils";
 
 const App = () => {
@@ -26,21 +25,31 @@ const App = () => {
     const user = await authCheck(jwt)
     setUser(user);
   }
+  const handleLogOut = (e) => {
+    e.preventDefault();
+    setUser(null);
+    deleteCookie("jwt_token");
+  }
 
   return (
-    <div>
-      <Register />
-      <br></br>
-      <br></br>
-      <Login newUser={setUser} />
-      {user 
-        ?
-        <h2>Hello welcome {user} you have logged in</h2>
+    <div className="App">
+      {user ?
+        <h2>Welcome {user}</h2>
         :
         <h2>Please log in</h2>
       }
+      {!user ?
+        <>
+          <Register newUser={setUser}/>
+          <Login newUser={setUser}/>
+        </>
+        :
+        <>
+        <button id="logout" onClick={handleLogOut}>log out</button>
+        </>
+      }
     </div>
   );
-};
+}
 
 export default App;
